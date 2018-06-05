@@ -1,0 +1,94 @@
+html,
+body,
+#cesiumContainer {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#flightList {
+  position: absolute;
+  /* width: 500px; */
+  top: 20px;
+  right: 20px;
+}
+
+.title {
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  background-color: #333;
+  color: #fff;
+}
+.title:last-child {
+  margin-right: 20px;
+}
+.title-header{
+  /* padding: 5px 15px ; */
+  display: inline-block;
+  text-align: left;
+}
+.title-id {
+  width: 50px;
+  text-align: center;
+}
+.title-flightNumber{
+  width: 75px;
+}
+.title-start {
+  width: 75px;
+}
+.title-arrival{
+  width: 75px;
+}
+.title-type{
+  width: 75px;
+}
+.title-status{
+  width: 90px;
+}
+
+
+.list {
+  overflow: auto;
+  height: 500px;
+}
+.list-content{
+  background: rgb(49, 44, 44);
+  color: #fff;
+}
+
+.content-item{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+}
+.content-item:hover {
+  color: rgb(49, 44, 44);
+  background-color: #fff;
+}
+.item {
+  text-align: left;
+  vertical-align: middle;
+}
+.item-id{
+  width: 50px;
+  text-align: center;
+}
+.item-flightNumber{
+  width: 75px;
+}
+.item-start {
+  width: 75px;
+}
+.item-arrival {
+  width: 75px;
+}
+.item-type {
+  width: 75px;
+}
+.item-status {
+  width: 75px;
+}

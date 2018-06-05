@@ -1,0 +1,47 @@
+{
+  "name": "webstudy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "node ./server.js",
+    "browser": "live-server --open=./view/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guzhongren/WebStudy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guzhongren/WebStudy/issues"
+  },
+  "homepage": "https://github.com/guzhongren/WebStudy#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "circular-json": "^0.5.1",
+    "ws": "^5.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "live-server": "^1.2.0",
+    "standard": "^11.0.1"
+  },
+  "standard": {
+    "globals": [
+      "console",
+      "Errow",
+      "WebSocket",
+      "Cesium",
+      "config",
+      "$"
+    ],
+    "properties": false,
+    "parser": "babel-eslint",
+    "ignore": [
+      "/lib/",
+      "/obj/"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <input type="text" id="content">
+    <button onclick="connectWebSocket()">连接</button>
+    <button onclick="sendMessage()">发送消息</button> -->
+    <script>
+        let ws;
+
+        if ("WebSocket" in window) {
+            ws = new WebSocket("ws://localhost:8181");
+            ws.onopen = function (e) {
+                console.log('websocket has connected');
+            }
+            ws.onmessage = function (res) {
+                // console.log(res);
+                console.log(JSON.parse(res.data));
+            }
+            ws.onclose = function (e) {
+                console.log('websocket has disconnected');
+            }
+        }
+    </script>
+</body>
+
+</html>
