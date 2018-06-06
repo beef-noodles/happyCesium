@@ -5,7 +5,6 @@ getViewer().then(viewer => {
 }, err => {
   if (err) {
     console.errpr(err)
-    return null
   }
 }).then(() => {
   let url = 'http://192.168.50.240:6080/arcgis/rest/services/bigdata/bigdatachinafour12/MapServer'
