@@ -7,6 +7,9 @@ getViewer().then(viewer => {
     console.errpr(err)
     return null
   }
+}).then(() => {
+  let url = 'http://192.168.50.240:6080/arcgis/rest/services/bigdata/bigdatachinafour12/MapServer'
+  addArcGisImageryProvider(url)
 }).then(viewer => {
   connectWS()
 })
@@ -35,6 +38,20 @@ function connectWS () {
       reject(new window.Errow('un supported browser....'))
     }
   })
+}
+/**
+* 叠合arcgis的动态服务
+* @param url (http://192.168.50.240:6080/arcgis/rest/services/bigdata/bigdatachinafour12/MapServer)
+*/
+function addArcGisImageryProvider (url) {
+  var layers = viewer.scene.imageryLayers
+
+  var slgylayer = layers.addImageryProvider(new Cesium.ArcGisMapServerImageryProvider({
+    url: url
+  }))
+  slgylayer.alpha = 0.5 // 透明度
+  // 设置图层的亮度
+  slgylayer.brightness = 2.0 // 设置亮度
 }
 /**
  * 创建三维视图
