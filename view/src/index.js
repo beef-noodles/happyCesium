@@ -4,7 +4,7 @@ getViewer().then(viewer => {
   return viewer
 }, err => {
   if (err) {
-    console.errpr(err)
+    console.error(err)
   }
 }).then(() => {
   let url = 'http://192.168.50.240:6080/arcgis/rest/services/bigdata/bigdatachinafour12/MapServer'
@@ -34,12 +34,12 @@ function connectWS () {
       resolve(ws)
     } else {
       window.alert('你的浏览器不支持WebSocket, 请更新浏览器。')
-      reject(new window.Errow('un supported browser....'))
+      reject(new window.Error('un supported browser....'))
     }
   })
 }
 /**
-* 叠合arcgis的动态服务
+* 叠合 arcgis 的动态服务
 * @param url (http://192.168.50.240:6080/arcgis/rest/services/bigdata/bigdatachinafour12/MapServer)
 */
 function addArcGisImageryProvider (url) {
