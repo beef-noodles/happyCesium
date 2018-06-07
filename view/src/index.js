@@ -12,7 +12,7 @@ getViewer().then(viewer => {
   let url = 'http://192.168.50.240:6080/arcgis/rest/services/bigdata/bigdatachinafour12/MapServer'
   addArcGisImageryProvider(url)
 }).then(viewer => {
-  console.log(3);
+  console.log(3)
   connectWS()
 })
 
