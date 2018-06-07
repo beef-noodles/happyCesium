@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "server": "node ./server.js",
-    "browser": "live-server --open=./view/"
+    "browser": "live-server --open=./view/",
+    "fix": "standard --fix"
   },
   "repository": {
     "type": "git",
@@ -26,8 +27,12 @@
   "devDependencies": {
     "babel-eslint": "^8.2.3",
     "live-server": "^1.2.0",
+    "pre-commit": "^1.2.2",
     "standard": "^11.0.1"
   },
+  "pre-commit": [
+    "fix"
+  ],
   "standard": {
     "globals": [
       "console",

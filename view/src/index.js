@@ -1,15 +1,18 @@
 let ws, viewer
 
 getViewer().then(viewer => {
+  console.log(1)
   return viewer
 }, err => {
   if (err) {
     console.error(err)
   }
 }).then(() => {
+  console.log(2)
   let url = 'http://192.168.50.240:6080/arcgis/rest/services/bigdata/bigdatachinafour12/MapServer'
   addArcGisImageryProvider(url)
 }).then(viewer => {
+  console.log(3);
   connectWS()
 })
 
@@ -39,9 +42,9 @@ function connectWS () {
   })
 }
 /**
-* 叠合 arcgis 的动态服务
-* @param url (http://192.168.50.240:6080/arcgis/rest/services/bigdata/bigdatachinafour12/MapServer)
-*/
+ * 叠合 arcgis 的动态服务
+ * @param url (http://192.168.50.240:6080/arcgis/rest/services/bigdata/bigdatachinafour12/MapServer)
+ */
 function addArcGisImageryProvider (url) {
   var layers = viewer.scene.imageryLayers
 
@@ -96,11 +99,11 @@ function addToList (modalInfo, key, id) {
   let type = modalInfo[8] ? modalInfo[8] : '--'
   let status = modalInfo[5] > 0 ? '飞行中' : '已降落'
   return '<div class="content-item" id="' + key + '"><span class="item item-id">' + id + '</span>' +
-  '<span class="item item-flightNumber">' + flightNumber + '</span>' +
-  '<span class="item item-start">' + start + '</span>' +
-  '<span class="item item-arrival">' + arrival + '</span>' +
-  '<span class="item item-type">' + type + '</span>' +
-  '<span class="item  item-status">' + status + '</span></div>'
+    '<span class="item item-flightNumber">' + flightNumber + '</span>' +
+    '<span class="item item-start">' + start + '</span>' +
+    '<span class="item item-arrival">' + arrival + '</span>' +
+    '<span class="item item-type">' + type + '</span>' +
+    '<span class="item  item-status">' + status + '</span></div>'
 }
 
 function trackedTarget (id) {
@@ -120,8 +123,7 @@ function AddModals (modals) {
   let i = 0
   let temp = ''
   for (let index in modals) {
-    if (index === 'full_count' || index === 'version') {
-    } else {
+    if (index === 'full_count' || index === 'version') {} else {
       i++
       if (i > config.limit) {
         break
@@ -139,12 +141,13 @@ function AddModals (modals) {
 }
 /**
  * 添加单个模型
- * @param {Cesium.Ｖiewer} viewer 三维球视图
+ * @param {Cesium.viewer} viewer 三维球视图
  * @param {string|number} key unique value
  */
 function AddModal (modalInfo, key) {
   // modal 位置
   if (modalInfo[1] & modalInfo[2]) {
+    /* eslint-disable new-cap */
     let position = new Cesium.Cartesian3.fromDegrees(modalInfo[2], modalInfo[1], (modalInfo[4] ? modalInfo[4] : 0))
     let heading = Cesium.Math.toRadians((modalInfo[3] ? modalInfo[3] : 0) - 90)
     let pitch = Cesium.Math.toRadians(2)
